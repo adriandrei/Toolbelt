@@ -1,17 +1,22 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Extensions.Logging;
+using Toolbelt.Shared.Services;
 
 namespace Toolbelt.FunctionTemplate;
 
-public static class ChronoTrigger
+public class ChronoTrigger
 {
-    [FunctionName("ChronoTrigger")]
-    public static async Task RunAsync([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILogger log)
+    private readonly IMyOtherService _service;
+
+    public ChronoTrigger(
+        IMyOtherService service)
     {
-        log.LogInformation($"C# Timer trigger function executed at: {DateTime.UtcNow}");
-        
+        _service = service;
+    }
+    
+    [FunctionName("ChronoTrigger")]
+    public async Task RunAsync([TimerTrigger("*/3 * * * * *")] TimerInfo myTimer)
+    {
+        await _service.DoTheOtherThing();
     }
 }
