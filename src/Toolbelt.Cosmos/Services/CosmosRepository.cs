@@ -15,6 +15,21 @@ public class CosmosRepository<T, K> : BaseCosmosRepository<T, K>, ICosmosReposit
     {
     }
 
+    public async Task<int> CountAsync(string partitionKey, Expression<Func<T, bool>> expression)
+    {
+        if (string.IsNullOrWhiteSpace(partitionKey))
+            throw new ArgumentNullException(nameof(partitionKey));
+
+        var requestOptions = new QueryRequestOptions();
+        requestOptions.EnableScanInQuery = true;
+
+        var queryDefinition = container.GetItemLinqQueryable<T>().Where(expression).ToQueryDefinition();
+        var queryText = queryDefinition.QueryText.Replace("VALUE root", "VALUE COUNT(1)", StringComparison.OrdinalIgnoreCase);
+        var queryIterator = container.GetItemQueryIterator<int>(queryText, null, requestOptions);
+        var response = await queryIterator.ReadNextAsync();
+        return response.Resource.FirstOrDefault();
+    }
+
     public async Task<List<T>> ListAsync(string partitionKey, Expression<Func<T, bool>> expression)
     {
         if (string.IsNullOrWhiteSpace(partitionKey))

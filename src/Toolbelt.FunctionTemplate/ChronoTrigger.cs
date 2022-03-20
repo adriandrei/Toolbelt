@@ -49,7 +49,7 @@ public class ChronoTrigger
         logger.LogInformation($"Succesfully upserted item {toAdd.Id} with number {newRandom}");
 
         var allUnderFifty = await this.repo
-            .ListAsync("sample", entry => entry.SomeNumber < 50);
-        logger.LogInformation($"Successfully retrieved {allUnderFifty.Count} entries under fifty");
+            .CountAsync("sample", entry => entry.SomeNumber < 50);
+        logger.LogInformation($"Successfully retrieved {allUnderFifty} entries under fifty");
     }
 }
