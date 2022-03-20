@@ -19,7 +19,7 @@ public class MyOtherService : IMyOtherService
         _myService = myService;
         _logger = logger;
     }
-    
+
     public async Task DoTheOtherThing()
     {
         try

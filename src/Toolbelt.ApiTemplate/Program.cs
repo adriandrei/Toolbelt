@@ -1,10 +1,9 @@
+using Toolbelt.Cosmos;
 using Toolbelt.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -12,6 +11,14 @@ builder.Services.AddShared(options =>
 {
     var secretKey = builder.Configuration.GetValue<string>("SecretKey");
     options.SomeKey = secretKey;
+});
+
+builder.Services.AddCosmos(options =>
+{
+    options.CosmosEndpoint = builder.Configuration.GetValue<string>("Cosmos:Endpoint");
+    options.CosmosKey = builder.Configuration.GetValue<string>("Cosmos:CosmosKey");
+    options.DatabaseId = builder.Configuration.GetValue<string>("Cosmos:DatabaseId");
+    options.ContainerName = builder.Configuration.GetValue<string>("Cosmos:ContainerName");
 });
 
 var app = builder.Build();

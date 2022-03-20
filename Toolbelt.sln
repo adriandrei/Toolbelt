@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolbelt.FunctionTemplate",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolbelt.Shared", "src\Toolbelt.Shared\Toolbelt.Shared.csproj", "{273D5E1B-DE30-4DB9-A4A4-469EA8EE01D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolbelt.ApiTemplate", "src\Toolbelt.ApiTemplate\Toolbelt.ApiTemplate.csproj", "{2B84C078-51B1-41FA-BED8-E61FD9A924DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolbelt.ApiTemplate", "src\Toolbelt.ApiTemplate\Toolbelt.ApiTemplate.csproj", "{2B84C078-51B1-41FA-BED8-E61FD9A924DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolbelt.Abstractions", "src\Toolbelt.Abstractions\Toolbelt.Abstractions.csproj", "{AFAC144B-9024-4B10-B6C2-082033D2BF49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolbelt.Cosmos", "src\Toolbelt.Cosmos\Toolbelt.Cosmos.csproj", "{4033DB33-3817-437B-A41A-6EA89BE9FBF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{5CD64C89-028F-4C5F-8828-32C27115D95E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +33,22 @@ Global
 		{2B84C078-51B1-41FA-BED8-E61FD9A924DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B84C078-51B1-41FA-BED8-E61FD9A924DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B84C078-51B1-41FA-BED8-E61FD9A924DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAC144B-9024-4B10-B6C2-082033D2BF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAC144B-9024-4B10-B6C2-082033D2BF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAC144B-9024-4B10-B6C2-082033D2BF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAC144B-9024-4B10-B6C2-082033D2BF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4033DB33-3817-437B-A41A-6EA89BE9FBF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4033DB33-3817-437B-A41A-6EA89BE9FBF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4033DB33-3817-437B-A41A-6EA89BE9FBF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4033DB33-3817-437B-A41A-6EA89BE9FBF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{273D5E1B-DE30-4DB9-A4A4-469EA8EE01D1} = {5CD64C89-028F-4C5F-8828-32C27115D95E}
+		{AFAC144B-9024-4B10-B6C2-082033D2BF49} = {5CD64C89-028F-4C5F-8828-32C27115D95E}
+		{4033DB33-3817-437B-A41A-6EA89BE9FBF9} = {5CD64C89-028F-4C5F-8828-32C27115D95E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {25458109-194F-4F8E-B46E-E673D351CECD}

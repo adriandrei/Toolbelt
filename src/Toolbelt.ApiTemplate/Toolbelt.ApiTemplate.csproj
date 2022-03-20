@@ -11,10 +11,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Toolbelt.Cosmos\Toolbelt.Cosmos.csproj" />
     <ProjectReference Include="..\Toolbelt.Shared\Toolbelt.Shared.csproj" />
   </ItemGroup>
 

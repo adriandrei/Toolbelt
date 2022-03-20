@@ -5,7 +5,7 @@ namespace Toolbelt.Shared;
 
 public class Options
 {
-    public string SomeKey { get; set; }
+    public string? SomeKey { get; set; }
 }
 
 public static class Startup
@@ -16,7 +16,7 @@ public static class Startup
     {
         var options = new Options();
         configure(options);
-        
+
         services
             .AddSingleton(p => options)
             .AddScoped<IMyService, MyService>()

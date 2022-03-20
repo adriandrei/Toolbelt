@@ -9,7 +9,8 @@
     },
     "LogLevel": {
       "Default": "Warning",
-      "Toolbelt.Shared":  "Information"
+      "Toolbelt.FunctionTemplate": "Information",
+      "Toolbelt.Shared": "Information"
     }
   }
 }
