@@ -1,7 +1,7 @@
 ﻿namespace Toolbelt.Shared.Services;
 
 public interface IMyService
-{   
+{
     Task<string> DoThat();
 }
 
@@ -12,7 +12,7 @@ public class MyService : IMyService
     {
         this._key = options.SomeKey;
     }
-    
+
     public async Task<string> DoThat()
     {
         await Task.Delay(100);
