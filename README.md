@@ -12,3 +12,7 @@ Collection of libraries and templates for basic .NET compute services: ASP.NET C
 ### Nice to have tools
 
 - [Postman](https://www.postman.com/downloads/?utm_source=postman-home)
+
+## Local development
+- Start CosmosDB Emulator. A browser window will launch pointing at the Database Explorer. Copy the `Primary Key` value and paste it into the project's `appsettings.json` file.
+- To debug In Visual Studio, hit `F5` if the project is setup as Default. To run a different project, right click on it and `Debug` -> `Start new instance`.
